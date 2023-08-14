@@ -2,11 +2,12 @@ import { useState } from "react";
 import {
   LightModeOutlined,
   DarkModeOutlined,
-  Menu as MenuIcon,
+  // Menu as MenuIcon,
   Search,
   SettingsOutlined,
   ArrowDropDownOutlined,
 } from "@mui/icons-material";
+import ViewSidebarIconTwoTone from '@mui/icons-material/ViewSidebar';
 import FlexBetween from "components/FlexBetween";
 import { useDispatch } from "react-redux";
 import { setMode } from "state";
@@ -51,7 +52,9 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
         {/* LEFT SIDE */}
         <FlexBetween>
           <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
-            <MenuIcon />
+            <ViewSidebarIconTwoTone sx={{
+              transform: "rotate(180deg)",
+              }} />
           </IconButton>
           <FlexBetween
             backgroundColor={theme.palette.background.alt}

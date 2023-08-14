@@ -41,6 +41,30 @@ VSCode extensions:
 - Tailwind Shades (generate color themes based on single color)
 - Turbo Console Log (create console.log statement from highlighted component)
 
+*** Deployment to render.com:
+Backend:
+- select "New Web Service"
+- connect github repository
+- root directory = 'server'
+- runtime = Node
+- build command = npm install
+- start command = npm start
+- under 'Advanced' set environment variables from server/.env (MONGO_URL and PORT)
+- select 'Create Web Service"
+	** https://mern-admin-backend-a5gv.onrender.com
+
+Frontend:
+- select "New Static Site"
+- connect github repository
+- root directory = 'client'
+- runtime = 
+- build command = npm run build
+- publish directory = 'build'
+- under 'Advanced' set environment variables from client/.env.local (REACT_APP_BASE_URL)
+- select 'Create Static Site'
+	** https://mern-admin-frontend-dnzb.onrender.com
+
+
 Node: https://nodejs.org/en/download/
 NPX: https://www.npmjs.com/package/npx
 VSCode: https://code.visualstudio.com/download
@@ -60,3 +84,7 @@ Railway: https://railway.app/
 MongoDB: https://www.mongodb.com/
 Mongoose: https://github.com/Automattic/mongoose
 MongoDB Aggregate: https://www.mongodb.com/docs/manual/reference/operator/aggregation-pipeline/
+
+
+Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies

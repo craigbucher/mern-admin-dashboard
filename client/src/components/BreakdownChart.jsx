@@ -41,6 +41,7 @@ const BreakdownChart = ({ isDashboard = false }) => {		// by default = *not* das
         data={formattedData}	// created above
 				// configuration generated on nivo pie chart page & copied over:
 				// theme is essentially the same as overview chart
+        valueFormat=" >-$d"
         theme={{
           axis: {
             domain: {

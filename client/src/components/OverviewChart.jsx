@@ -74,6 +74,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {	// by default, is *no
           legend: {
             text: {
               fill: theme.palette.secondary[200],
+              fontSize: 16, // added to make it larger
             },
           },
           ticks: {
@@ -89,6 +90,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {	// by default, is *no
         legends: {
           text: {
             fill: theme.palette.secondary[200],
+            fontSize: 16, // added to make it larger
           },
         },
         tooltip: {
@@ -97,7 +99,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {	// by default, is *no
           },
         },
       }}
-      margin={{ top: 20, right: 50, bottom: 50, left: 70 }}
+      margin={{ top: 20, right: 50, bottom: 50, left: 75 }} // I modified 'left'
       xScale={{ type: "point" }}
       yScale={{
         type: "linear",
@@ -106,7 +108,8 @@ const OverviewChart = ({ isDashboard = false, view }) => {	// by default, is *no
         stacked: false, // modified
         reverse: false,
       }}
-      yFormat=" >-.2f"
+      yFormat={view === "sales" ? " >-$.2d" : ""} // for tooltip display
+      // yFormat=" >-$.2d" // changed to currency display
       curve="catmullRom"  // added
       enableArea={isDashboard}
       axisTop={null}
@@ -125,6 +128,8 @@ const OverviewChart = ({ isDashboard = false, view }) => {	// by default, is *no
         legendPosition: "middle",
       }}
       axisLeft={{
+        format:view === "sales" ? " >-$.2d" : "",
+        // format: " >-$d",  // chaged to currency
         orient: "left",
         tickValues: 5,  // only 5 tick values on left axis
         tickSize: 5,
@@ -133,7 +138,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {	// by default, is *no
         legend: isDashboard   // if dashboard, no legend
           ? ""                // if not dashboard and 'sales' view or 'units' view:
           : `Total ${view === "sales" ? "Revenue" : "Units"} for Year`,
-        legendOffset: -60,  // modified
+        legendOffset: -65,  // modified
         legendPosition: "middle",
       }}
       enableGridX={false}
@@ -158,7 +163,7 @@ const OverviewChart = ({ isDashboard = false, view }) => {	// by default, is *no
                 itemWidth: 80,
                 itemHeight: 20,
                 itemOpacity: 0.75,
-                symbolSize: 12,
+                symbolSize: 20,
                 symbolShape: "circle",
                 symbolBorderColor: "rgba(0, 0, 0, .5)",
                 effects: [
