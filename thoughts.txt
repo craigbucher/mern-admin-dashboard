@@ -1,0 +1,3 @@
+- modify tooltip text to include "$" for currency
+- modify tooltip text to remove decimal for units (only sell whole units)
+- convert 'userID' in 'performance' to 'name'

@@ -1,0 +1,62 @@
+https://www.youtube.com/watch?v=0cPCMIuDk2I
+https://github.com/ed-roh/fullstack-admin
+https://discord.com/invite/2FfPeEk2mX
+the3ddy@hotmail.com????
+
+Backend:
+- Mongoose	(database management)
+- ExpressJS	(backend framework)
+- node.js (runtime)
+- 
+
+Frontend:
+- React (frontend framework)
+- MaterialUI	(styling)
+- MaterialUI datagrid (tables)
+- nivo	(charts)
+- Reduxt toolkit (state management)
+- RTK Query (API calls)
+- 
+
+Backend:
+npm i express body-parser cors dotenv helmet morgan mongoose nodemon
+npm i country-iso-2-to-3
+
+Frontend:
+npx create-react-app client
+npm i react-redux @reduxjs/toolkit react-datepicker@4.8.0 react-router-dom@6 @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/x-data-grid@5.17.13 @nivo/core @nivo/bar @nivo/geo @nivo/pie
+npm i @nivo/line
+
+Backend .env:
+MONGO_URL='< connection url provided by mongoDB Atlas>'
+# backend api server port:
+PORT=5001
+
+Frontend .env.local:
+REACT_APP_BASE_URL=http://localhost:5001	(or whatever is appropriate)
+
+VSCode extensions:
+- ES7+ React/Redux/React-Native (linter)
+- Prettier - Code Formatter
+- Tailwind Shades (generate color themes based on single color)
+- Turbo Console Log (create console.log statement from highlighted component)
+
+Node: https://nodejs.org/en/download/
+NPX: https://www.npmjs.com/package/npx
+VSCode: https://code.visualstudio.com/download
+Nodemon: https://github.com/remy/nodemon
+Nivo: https://nivo.rocks/
+Material UI: https://mui.com/material-ui/getting-started/installation/
+Material UI Data Grid: https://mui.com/x/react-data-grid/
+React Router: https://reactrouter.com/en/v6.3.0/getting-started/installation
+React Date Picker: https://reactdatepicker.com/#example-date-range
+Redux Toolkit: https://redux-toolkit.js.org/introduction/getting-started
+Redux Toolkit Query: https://redux-toolkit.js.org/rtk-query/overview
+Dotenv: https://github.com/motdotla/dotenv
+JsonWebToken: https://github.com/auth0/node-jsonwebtoken
+Google Fonts: https://fonts.google.com/
+Render: https://render.com/			<== site deployment
+Railway: https://railway.app/
+MongoDB: https://www.mongodb.com/
+Mongoose: https://github.com/Automattic/mongoose
+MongoDB Aggregate: https://www.mongodb.com/docs/manual/reference/operator/aggregation-pipeline/
