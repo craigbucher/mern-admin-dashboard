@@ -29,3 +29,7 @@ body,
 ::-webkit-scrollbar-track:hover {
   background: #7a7f9d;
 }
+
+/* Set hyperlink (<a> tag) color: */
+:any-link { color: rgba(255, 255, 255, 0.7) }
+:any-link:active { color: orange }

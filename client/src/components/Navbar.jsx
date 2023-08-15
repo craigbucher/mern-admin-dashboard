@@ -5,7 +5,7 @@ import {
   // Menu as MenuIcon,
   Search,
   SettingsOutlined,
-  ArrowDropDownOutlined,
+  ArrowDropDownOutlined,  // prefer this to MenuIcon
 } from "@mui/icons-material";
 import ViewSidebarIconTwoTone from '@mui/icons-material/ViewSidebar';
 import FlexBetween from "components/FlexBetween";
@@ -24,6 +24,7 @@ import {
   MenuItem,
   useTheme,
 } from "@mui/material";
+import Modal from "./Modal";
 
 const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
 	// useDispatch = allows you to send or dispatch an action to the redux 
@@ -35,6 +36,9 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const isOpen = Boolean(anchorEl);   // menu 'isOpen' when 'anchorEl' has a value
   const handleClick = (event) => setAnchorEl(event.currentTarget);  // set 'anchorEl' to item user clicks on
   const handleClose = () => setAnchorEl(null);  // when close menu, remove anchor element
+
+  // code for "About" modal:
+
 
   return (
 		// <AppBar> displays information and actions relating to the current screen
@@ -51,7 +55,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
       <Toolbar sx={{ justifyContent: "space-between" }}>
         {/* LEFT SIDE */}
         <FlexBetween>
-          <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
+          <IconButton title="Open/Close Sidebar" onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
             <ViewSidebarIconTwoTone sx={{
               transform: "rotate(180deg)",
               }} />
@@ -63,7 +67,7 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
             p="0.1rem 1.5rem"	// 0.1 top/bottom; 1.5 left/right
           >
             <InputBase placeholder="Search..." />
-            <IconButton>
+            <IconButton title="Search">
 							{/* MUI 'search' icon: */}
               <Search />
             </IconButton>
@@ -72,16 +76,17 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
 
         {/* RIGHT SIDE */}
         <FlexBetween gap="1.5rem">
-					{/* switch between light and dark modes: */}
+          <Modal />
+          {/* switch between light and dark modes: */}
 					{/* 'dispatch' = redux */}
-          <IconButton onClick={() => dispatch(setMode())}>
+          <IconButton title="Light/Dark Mode" onClick={() => dispatch(setMode())}>
             {theme.palette.mode === "dark" ? (
               <DarkModeOutlined sx={{ fontSize: "25px" }} />
             ) : (
               <LightModeOutlined sx={{ fontSize: "25px" }} />
             )}
           </IconButton>
-          <IconButton>
+          <IconButton title="Settings">
             <SettingsOutlined sx={{ fontSize: "25px" }} />
           </IconButton>
 

@@ -4,8 +4,9 @@ import Transaction from "../models/Transaction.js";
 
 export const getAdmins = async (req, res) => {
   try {
-		// get all users with role of 'admin' but do not return the password field
-    const admins = await User.find({ role: "admin" }).select("-password");
+    const roles = ['admin', 'superadmin'];
+		// get all users with role of 'admin' or 'superadmin' but do not return the password field
+    const admins = await User.find({ role: roles }).select("-password");
     res.status(200).json(admins);	// return the result
   } catch (error) {
 		// in real-world app, should provide more detail:

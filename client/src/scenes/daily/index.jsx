@@ -105,6 +105,7 @@ const Daily = () => {
                 legend: {
                   text: {
                     fill: theme.palette.secondary[200],
+                    fontSize: 16, // added to make it larger
                   },
                 },
                 ticks: {
@@ -120,6 +121,7 @@ const Daily = () => {
               legends: {
                 text: {
                   fill: theme.palette.secondary[200],
+                  fontSize: 16, // added to make it larger
                 },
               },
               tooltip: {
@@ -129,7 +131,7 @@ const Daily = () => {
               },
             }}
             colors={{ datum: "color" }}	// to use custom colors, but not explained well
-            margin={{ top: 50, right: 50, bottom: 70, left: 60 }} // modified
+            margin={{ top: 50, right: 70, bottom: 70, left: 65 }} // modified
             xScale={{ type: "point" }}
             yScale={{
               type: "linear",
@@ -138,7 +140,7 @@ const Daily = () => {
               stacked: false,
               reverse: false,
             }}
-            yFormat=" >-.2f"
+            yFormat=" >-$.2d"   // changed to currency
             curve="catmullRom"
             axisTop={null}
             axisRight={null}
@@ -152,12 +154,13 @@ const Daily = () => {
               legendPosition: "middle",
             }}
             axisLeft={{
+              format: " >-$d",  // chaged to currency
               orient: "left",
               tickSize: 5,
               tickPadding: 5,
               tickRotation: 0,
               legend: "Total",
-              legendOffset: -50,		// modified
+              legendOffset: -55,		// modified
               legendPosition: "middle",
             }}
             enableGridX={false}
@@ -175,12 +178,12 @@ const Daily = () => {
                 justify: false,
                 translateX: 50,		// modified
                 translateY: 0,		// modified
-                itemsSpacing: 0,
+                itemsSpacing: 5,  // modified
                 itemDirection: "left-to-right",
                 itemWidth: 80,
                 itemHeight: 20,
                 itemOpacity: 0.75,
-                symbolSize: 12,
+                symbolSize: 20,   // made a little bigger
                 symbolShape: "circle",
                 symbolBorderColor: "rgba(0, 0, 0, .5)",
                 effects: [

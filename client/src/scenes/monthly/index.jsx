@@ -64,6 +64,7 @@ const Monthly = () => {
                 legend: {
                   text: {
                     fill: theme.palette.secondary[200],
+                    fontSize: 16, // added to make it larger
                   },
                 },
                 ticks: {
@@ -79,6 +80,7 @@ const Monthly = () => {
               legends: {
                 text: {
                   fill: theme.palette.secondary[200],
+                  fontSize: 16, // added to make it larger
                 },
               },
               tooltip: {
@@ -88,7 +90,7 @@ const Monthly = () => {
               },
             }}
             colors={{ datum: "color" }}
-            margin={{ top: 50, right: 50, bottom: 70, left: 60 }}
+            margin={{ top: 50, right: 70, bottom: 70, left: 70 }} // modified
             xScale={{ type: "point" }}
             yScale={{
               type: "linear",
@@ -97,7 +99,7 @@ const Monthly = () => {
               stacked: false,
               reverse: false,
             }}
-            yFormat=" >-.2f"
+            yFormat=" >-$.2d"   // changed to decimal
             // curve="catmullRom"
             axisTop={null}
             axisRight={null}
@@ -111,12 +113,13 @@ const Monthly = () => {
               legendPosition: "middle",
             }}
             axisLeft={{
+              format: " >-$.2d",  // changed to decimal
               orient: "left",
               tickSize: 5,
               tickPadding: 5,
               tickRotation: 0,
               legend: "Total",
-              legendOffset: -50,
+              legendOffset: -60,  // modified
               legendPosition: "middle",
             }}
             enableGridX={false}
@@ -134,12 +137,12 @@ const Monthly = () => {
                 justify: false,
                 translateX: 50,
                 translateY: 0,
-                itemsSpacing: 0,
+                itemsSpacing: 5,  // modified from 0
                 itemDirection: "left-to-right",
                 itemWidth: 80,
                 itemHeight: 20,
                 itemOpacity: 0.75,
-                symbolSize: 12,
+                symbolSize: 20,   // made a little bigger
                 symbolShape: "circle",
                 symbolBorderColor: "rgba(0, 0, 0, .5)",
                 effects: [

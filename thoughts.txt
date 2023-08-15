@@ -2,5 +2,9 @@
 ✔ modify tooltip text to remove decimal for units (only sell whole units)
 - convert 'userID' in 'performance' to 'name'
 - backend/express favicon?
-- 'about this site' link & modal in topbar
+✔ 'about this site' link & modal in topbar
 ✔ add '$' to values in pie breakdownChart
+- title on dashboard overview chart	
+✔ search for both admin and superadmin
+✔ different "Download Reports" hover color
+- Footer?

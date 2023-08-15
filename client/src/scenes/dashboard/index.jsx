@@ -72,6 +72,10 @@ const Dashboard = () => {
               fontSize: "14px",
               fontWeight: "bold",
               padding: "10px 20px",	// top/bottom	left/right
+              ":hover": {   // I added this and modified hover color:
+                backgroundColor: theme.palette.secondary[500],
+                color: theme.palette.background.alt,
+              },
             }}
           >
             <DownloadOutlined sx={{ mr: "10px" }} />
@@ -124,6 +128,9 @@ const Dashboard = () => {
           p="1rem"
           borderRadius="0.55rem"
         >
+          <Typography variant="h6" sx={{ color: theme.palette.secondary[100] }}>
+          Sales Overview:
+        </Typography>
           <OverviewChart view="sales" isDashboard={true} />
         </Box>
 				{/* bottom left: */}
