@@ -41,7 +41,9 @@ const Modal = () => {
 					<DialogContentText>
 					All coding by Craig Bucher, craig @ craigbucher . com,
 					based on site design in tutorial by <span>
-					<a href="https://www.youtube.com/watch?v=0cPCMIuDk2I" target="new">Ed Roh</a></span>.
+					<a href="https://www.youtube.com/watch?v=0cPCMIuDk2I" target="new">Ed Roh</a></span>
+					. My code on GitHub <span><a href="https://github.com/craigbucher/mern-admin-dashboard" 
+					target="new">here</a></span>. Back-end source data hosted on MongoDB Atlas.
 					</DialogContentText>
 					<DialogContentText>
 						<p><samp><u>Front end</u>:<br/>
