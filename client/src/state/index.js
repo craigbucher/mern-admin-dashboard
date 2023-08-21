@@ -7,7 +7,7 @@ const initialState = {
   mode: "dark",
   // simulating user login (not covered in this tutorial):
   // userId: "63701cc1f03239b7f700000e", // userId from mock data in backend = 'Shelly'
-  userId: "63701cc1f03239b7f700000e",
+  userId: "63701cc1f03239c72c000182",
 };
 
 export const globalSlice = createSlice({

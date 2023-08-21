@@ -1,11 +1,12 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   LightModeOutlined,
   DarkModeOutlined,
   // Menu as MenuIcon,
   Search,
   SettingsOutlined,
-  ArrowDropDownOutlined,  // prefer this to MenuIcon
+  ArrowDropDownOutlined,
 } from "@mui/icons-material";
 import ViewSidebarIconTwoTone from '@mui/icons-material/ViewSidebar';
 import FlexBetween from "components/FlexBetween";
@@ -36,9 +37,21 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
   const isOpen = Boolean(anchorEl);   // menu 'isOpen' when 'anchorEl' has a value
   const handleClick = (event) => setAnchorEl(event.currentTarget);  // set 'anchorEl' to item user clicks on
   const handleClose = () => setAnchorEl(null);  // when close menu, remove anchor element
+  const navigate = useNavigate();
 
-  // code for "About" modal:
-
+  const handleLogout = () => {
+    const response = fetch(`${process.env.REACT_APP_BASE_URL}/general/logout`, {
+        method: "GET",
+        withCredentials: true,
+        credentials: 'include',
+        headers: {
+        "Content-Type": "application/json",
+        },
+    });
+    localStorage.removeItem("DashBoardUser"); 
+    localStorage.removeItem("DashBoardUserLoggedIn"); // clear login state/info
+    navigate("/");
+};
 
   return (
 		// <AppBar> displays information and actions relating to the current screen
@@ -136,9 +149,9 @@ const Navbar = ({ user, isSidebarOpen, setIsSidebarOpen }) => {
               anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
             >
               {/* only one menu item, simulating logout function: */}
-              <MenuItem onClick={handleClose}>Log Out</MenuItem>
-              <MenuItem onClick={handleClose}>About</MenuItem>
+              <MenuItem onClick={handleLogout}>Log Out</MenuItem>
               <MenuItem onClick={handleClose}>Sample Item</MenuItem>
+              <MenuItem onClick={handleClose}>Another Item</MenuItem>
             </Menu>
           </FlexBetween>
         </FlexBetween>

@@ -20,6 +20,10 @@ import Monthly from "scenes/monthly";
 import Breakdown from "scenes/breakdown";
 import Admin from "scenes/admin";
 import Performance from "scenes/performance";
+import LogIn from "./login";
+import RequireAuth from "./middleware/RequireAuth";
+import RedirectIfAuthenticated from "./middleware/RedirectIfAuthenticated";
+
 
 function App() {
   const mode = useSelector((state) => state.global.mode); // initialize state defined in state/index.js
@@ -37,11 +41,13 @@ function App() {
           {/* elegant, consistent, and simple baseline to build upon */}
           <CssBaseline />
           <Routes>
+          <Route path="/" element={<RedirectIfAuthenticated Component={LogIn} />} />
             {/* Set parent element for all subsequent routes/elements: */}
             {/* i.e., <Layout> will be displayed on all pages */}
             {/* <Layout> includes <Navbar> and <Sidebar> */}
-            {/* *** <Outlet> in <Layout> will display page designated in route *** */}
-            <Route element={<Layout />}>
+            {/* *** <Outlet> in <Layout> will display page designated in routes below it *** */}
+            <Route element={<RequireAuth Component={Layout} />}>
+            {/* <Route element={<Layout />}> */}
               {/* redirect 'root' page, '/' to <Dashboard> */}
               {/* emulates redirect after user login (no login in this project) */}
               <Route path="/" element={<Navigate to="/dashboard" replace />} />

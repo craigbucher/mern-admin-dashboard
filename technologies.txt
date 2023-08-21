@@ -7,7 +7,7 @@ Backend:
 - Mongoose	(database management)
 - ExpressJS	(backend framework)
 - node.js (runtime)
-- 
+- Passport (user authentication)
 
 Frontend:
 - React (frontend framework)
@@ -21,11 +21,16 @@ Frontend:
 Backend:
 npm i express body-parser cors dotenv helmet morgan mongoose nodemon
 npm i country-iso-2-to-3
+(authentication:)
+npm i bcrypt connect-mongo@4.6.0 cookie-parser express-session@1.17.1 passport passport-local path validator@13.6.0 
 
 Frontend:
 npx create-react-app client
 npm i react-redux @reduxjs/toolkit react-datepicker@4.8.0 react-router-dom@6 @mui/material @emotion/react @emotion/styled @mui/icons-material @mui/x-data-grid@5.17.13 @nivo/core @nivo/bar @nivo/geo @nivo/pie
 npm i @nivo/line
+npm i react-modal
+(authentication:)
+
 
 Backend .env:
 MONGO_URL='< connection url provided by mongoDB Atlas>'
@@ -85,6 +90,9 @@ MongoDB: https://www.mongodb.com/
 Mongoose: https://github.com/Automattic/mongoose
 MongoDB Aggregate: https://www.mongodb.com/docs/manual/reference/operator/aggregation-pipeline/
 
+Saira Abdulla's authentication code:
+https://github.com/saira512dev/AdminDashboard-Server
+https://github.com/saira512dev/AdminDashboard-Client/	
 
 Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies

@@ -43,7 +43,9 @@ const Modal = () => {
 					based on site design in tutorial by <span>
 					<a href="https://www.youtube.com/watch?v=0cPCMIuDk2I" target="new">Ed Roh</a></span>
 					. My code on GitHub <span><a href="https://github.com/craigbucher/mern-admin-dashboard" 
-					target="new">here</a></span>. Back-end source data hosted on MongoDB Atlas.
+					target="new">here</a></span>. User authentication and login derived from 
+					<span> <a href="https://github.com/saira512dev" target="new">Saira Abdulla</a></span>'s implementation.
+					Back-end source data hosted on MongoDB Atlas.
 					</DialogContentText>
 					<DialogContentText>
 						<p><samp><u>Front end</u>:<br/>
@@ -57,8 +59,9 @@ const Modal = () => {
 						<p><samp><u> Back end</u>:<br/>
 						Express.js = back-end framework<br/>
 						node.js = runtime<br/>
-						MongoDB = document-oriented database<br/>
-						Mongoose = database abstraction</samp></p>
+						Mongoose = database abstraction<br/>
+						Passport = authentication middleware<br/>
+						express-session = session management middleware</samp></p>
 					</DialogContentText>
         </DialogContent>
         <DialogActions>

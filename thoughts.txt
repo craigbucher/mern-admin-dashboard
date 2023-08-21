@@ -1,6 +1,6 @@
 ✔ modify tooltip text to include "$" for currency
 ✔ modify tooltip text to remove decimal for units (only sell whole units)
-- convert 'userID' in 'performance' to 'name'
+- convert 'userID' in 'performance' to 'name' (tough)
 - backend/express favicon?
 ✔ 'about this site' link & modal in topbar
 ✔ add '$' to values in pie breakdownChart
@@ -8,3 +8,7 @@
 ✔ search for both admin and superadmin
 ✔ different "Download Reports" hover color
 - Footer?
+- 'Settings' modal
+
+Node JS with Passport Authentication simplified:
+https://medium.com/@prashantramnyc/node-js-with-passport-authentication-simplified-76ca65ee91e5
